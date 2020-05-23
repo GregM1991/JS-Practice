@@ -49,5 +49,15 @@ const myDeck = {
 			cards.push(this.drawCard());
 		}
 		return cards;
+	},
+	shuffle() {
+		const { deck } = this;
+		// loop over array backwards
+		for (let i = deck.length - 1; i > 0; i--) {
+			// pick random index before current element
+			let j = Math.floor(Math.random() * (i + 1));
+			//swap
+			[ deck[i], deck[j] ] = [ deck[j], deck[i] ];
+		}
 	}
 };
