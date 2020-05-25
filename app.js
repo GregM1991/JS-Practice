@@ -1,5 +1,5 @@
-// To select the element with id of bear-photo:
-document.getElementById('bear-photo')
+const allLis = document.querySelectorAll('li');
 
-//To select the element with id of main:
-document.getElementById('main')
+for (let li of allLis) {
+	li.innerHTML = 'WE ARE <b>THE CHAMPIONS</b>';
+}
