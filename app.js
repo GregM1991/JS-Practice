@@ -1,5 +1,15 @@
-const allLis = document.querySelectorAll('li');
+// const allLis = document.querySelectorAll('li');
+// const colors = [ 'red', 'orange', 'yellow', 'green', 'blue', 'purple' ];
 
-for (let li of allLis) {
-	li.innerHTML = 'WE ARE <b>THE CHAMPIONS</b>';
-}
+// allLis.forEach((li, i) => {
+// 	const color = colors[i];
+// 	li.style.color = color;
+// });
+
+// const h1 = document.querySelector('h1');
+
+const todo = document.querySelector('#todos .todo');
+
+// todo.style.color = 'gray';
+// todo.style.textDecoration = 'line-through';
+// todo.style.opacity = '0.50';
