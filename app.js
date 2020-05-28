@@ -1,25 +1,18 @@
-const btnClicker = document.querySelector('#clicker');
+const btn = document.querySelector('button');
 
 // btnClicker.onclick = function() {
 // 	console.log('You clicked me go away');
 // };
 
-btnClicker.addEventListener('click', () => {
-	alert('Clicked!!');
+btn.addEventListener('mouseover', () => {
+	console.log('Moused over me');
+	const height = Math.floor(Math.random() * window.innerHeight);
+	const width = Math.floor(Math.random() * window.innerWidth);
+	btn.style.left = `${width}px`;
+	btn.style.top = `${height}px`;
 });
 
-btnClicker.addEventListener('click', () => {
-	console.log('Clicked!!');
-});
-
-btnClicker.addEventListener('mouseover', () => {
-	btnClicker.innerText = 'STOP TOUCHING ME';
-});
-
-btnClicker.addEventListener('mouseout', () => {
-	btnClicker.innerText = 'Click Me!';
-});
-
-window.addEventListener('scroll', () => {
-	console.log('STOP SCROLLING!');
+btn.addEventListener('click', () => {
+	btn.innerText = 'You Got Me';
+	document.body.style.backgroundColor = 'green';
 });
