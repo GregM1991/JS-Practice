@@ -1,18 +1,17 @@
-const btn = document.querySelector('button');
+const colors = [ 'red', 'orange', 'yellow', 'green', 'blue', 'purple', 'indigo', 'violet' ];
 
-// btnClicker.onclick = function() {
-// 	console.log('You clicked me go away');
-// };
+const container = document.querySelector('#boxes');
 
-btn.addEventListener('mouseover', () => {
-	console.log('Moused over me');
-	const height = Math.floor(Math.random() * window.innerHeight);
-	const width = Math.floor(Math.random() * window.innerWidth);
-	btn.style.left = `${width}px`;
-	btn.style.top = `${height}px`;
-});
+const printColor = function() {
+	const h1 = document.querySelector('h1');
+	h1.style.color = this.style.backgroundColor;
+	console.log(this.style.backgroundColor);
+};
 
-btn.addEventListener('click', () => {
-	btn.innerText = 'You Got Me';
-	document.body.style.backgroundColor = 'green';
-});
+for (let color of colors) {
+	const box = document.createElement('div');
+	box.style.backgroundColor = color;
+	box.classList.add('box');
+	container.appendChild(box);
+	box.addEventListener('click', printColor);
+}
