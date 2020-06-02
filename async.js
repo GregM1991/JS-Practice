@@ -60,18 +60,40 @@ console.log('hello world');
 // 	console.log(poke3.data);
 // }
 
-async function get3Pokemon() {
-	const prom1 = axios.get('https://pokeapi.co/api/v2/pokemon/1');
-	const prom2 = axios.get('https://pokeapi.co/api/v2/pokemon/2');
-	const prom3 = axios.get('https://pokeapi.co/api/v2/pokemon/3');
-	const results = await Promise.all([ prom1, prom2, prom3 ]);
-	printPokemon(results);
-}
+// async function get3Pokemon() {
+// 	const prom1 = axios.get('https://pokeapi.co/api/v2/pokemon/1');
+// 	const prom2 = axios.get('https://pokeapi.co/api/v2/pokemon/2');
+// 	const prom3 = axios.get('https://pokeapi.co/api/v2/pokemon/3');
+// 	const results = await Promise.all([ prom1, prom2, prom3 ]);
+// 	printPokemon(results);
+// }
 
-function printPokemon(results) {
-	for (let pokemon of results) {
-		console.log(pokemon.data.name);
+// function printPokemon(results) {
+// 	for (let pokemon of results) {
+// 		console.log(pokemon.data.name);
+// 	}
+// }
+
+// get3Pokemon();
+
+class Color {
+	constructor(r, g, b, name) {
+		this.r = r;
+		this.g = g;
+		this.b = b;
+		this.name = name;
+	}
+	rgb() {
+		const { r, g, b } = this;
+		return `rbg(${this.innerRGB()})`;
+	}
+	innerRGB() {
+		const { r, g, b } = this;
+		return `${r}, ${g}, ${b}`;
+	}
+	rgba(a = 1.0) {
+		return `rgba(${this.innerRGB}, ${a})`;
 	}
 }
-
-get3Pokemon();
+const c1 = new Color(255, 57, 89, 'tomato');
+const white = new Color(255, 255, 255, 'white');
